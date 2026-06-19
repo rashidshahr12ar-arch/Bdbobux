@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bdbobux</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0d1117;
+color:white;
+}
+
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.popup-box{
+background:#161b22;
+padding:30px;
+border-radius:15px;
+text-align:center;
+width:90%;
+max-width:400px;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+margin:10px;
+font-size:16px;
+}
+
+.agree{
+background:#00c853;
+color:white;
+}
+
+header{
+background:#161b22;
+padding:20px;
+text-align:center;
+font-size:30px;
+font-weight:bold;
+}
+
+.container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:30px;
+}
+
+.card{
+background:#1f2937;
+padding:20px;
+border-radius:12px;
+text-align:center;
+}
+
+.card h2{
+margin-bottom:10px;
+}
+
+.price{
+color:#00e676;
+font-size:20px;
+margin:10px 0;
+}
+
+.order{
+background:#2979ff;
+color:white;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#161b22;
+margin-top:30px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="popup" id="popup">
+<div class="popup-box">
+<h2>Welcome to Bdbobux</h2>
+<br>
+<p>You must have WhatsApp or Discord to order.</p>
+<br>
+<button class="agree" onclick="enterSite()">I Agree</button>
+</div>
+</div>
+
+<header>
+Bdbobux
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Blox Fruits</h2>
+<p>Gamepasses & Digital Items</p>
+<div class="price">Prices Available</div>
+<button class="order" onclick="order('Blox Fruits')">Order</button>
+</div>
+
+<div class="card">
+<h2>Rivals</h2>
+<p>Gamepasses</p>
+<div class="price">Prices Available</div>
+<button class="order" onclick="order('Rivals')">Order</button>
+</div>
+
+<div class="card">
+<h2>JJS</h2>
+<p>Gamepasses</p>
+<div class="price">Prices Available</div>
+<button class="order" onclick="order('JJS')">Order</button>
+</div>
+
+<div class="card">
+<h2>MM2</h2>
+<p>Digital Items</p>
+<div class="price">Prices Available</div>
+<button class="order" onclick="order('MM2')">Order</button>
+</div>
+
+</div>
+
+<footer>
+Discord: .your_n1ghtmare.
+</footer>
+
+<script>
+
+function enterSite(){
+document.getElementById("popup").style.display="none";
+}
+
+function order(product){
+
+let choice=confirm(
+"Press OK for WhatsApp.\nPress Cancel for Discord."
+);
+
+if(choice){
+window.open(
+"https://wa.me/8801319770853?text=Hi! I want to order "+product,
+"_blank"
+);
+}else{
+alert("Add me on Discord:\n.your_n1ghtmare.");
+}
+
+}
+
+</script>
+
+</body>
+</html>
